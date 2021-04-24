@@ -1,4 +1,4 @@
-# Coffeeshop Demo with Quarkus
+# A Man, called Kafka, Walks into a Coffeeshop and...
 
 This directory contains a set of demo around _reactive_ in Quarkus with Kafka.
 It demonstrates the elasticity and resilience of the system.
