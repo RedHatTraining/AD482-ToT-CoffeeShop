@@ -1,9 +1,6 @@
-package me.escoffier.quarkus.coffeeshop.model;
+package com.systemcraftsman.demo.coffeeshop.dto;
 
-import io.quarkus.runtime.annotations.RegisterForReflection;
-
-@RegisterForReflection
-public class Order {
+public class OrderDTO {
 
     private String product;
     private String name;
@@ -13,7 +10,7 @@ public class Order {
         return product;
     }
 
-    public Order setProduct(String product) {
+    public OrderDTO setProduct(String product) {
         this.product = product;
         return this;
     }
@@ -22,7 +19,7 @@ public class Order {
         return name;
     }
 
-    public Order setName(String name) {
+    public OrderDTO setName(String name) {
         this.name = name;
         return this;
     }
@@ -31,7 +28,7 @@ public class Order {
         return orderId;
     }
 
-    public Order setOrderId(String orderId) {
+    public OrderDTO setOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }

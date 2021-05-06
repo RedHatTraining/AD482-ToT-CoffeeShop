@@ -1,0 +1,19 @@
+{
+  "namespace": "com.systemcraftsman.demo.coffeeshop.model",
+  "type": "record",
+  "name": "Order",
+  "fields": [
+    {
+      "name": "product",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+     {
+       "name": "orderId",
+       "type": "string"
+     }
+  ]
+}

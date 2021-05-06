@@ -1,0 +1,32 @@
+{
+  "namespace": "com.systemcraftsman.demo.coffeeshop.model",
+  "type": "record",
+  "name": "Beverage",
+  "fields": [
+    {
+      "name": "beverage",
+      "type": "string"
+    },
+    {
+      "name": "customer",
+      "type": "string"
+    },
+     {
+       "name": "preparedBy",
+       "type": "string"
+     },
+     {
+        "name": "orderId",
+        "type": "string"
+      },
+     {
+          "name": "preparationState",
+          "type": ["null", {
+                  "type": "enum",
+                  "name": "BeverageState",
+                  "symbols": ["IN_QUEUE", "BEING_PREPARED", "READY", "FAILED"]
+              }
+          ]
+      }
+  ]
+}

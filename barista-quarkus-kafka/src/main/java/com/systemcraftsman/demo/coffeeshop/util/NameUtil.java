@@ -1,11 +1,10 @@
-package me.escoffier.quarkus.coffeeshop;
+package com.systemcraftsman.demo.coffeeshop.util;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-class Names {
-
+public class NameUtil {
     private static final List<String> VALUES = Arrays.asList(
             "Olivia",
             "Oliver",
@@ -34,13 +33,13 @@ class Names {
             "Zoe"
     );
 
-    static String pickAName() {
+    public static String getRandomName() {
         Random random = new Random();
         int index = random.nextInt(VALUES.size());
         return VALUES.get(index);
     }
 
-    private Names() {
+    private NameUtil() {
         // avoid direct instantiation
     }
 }

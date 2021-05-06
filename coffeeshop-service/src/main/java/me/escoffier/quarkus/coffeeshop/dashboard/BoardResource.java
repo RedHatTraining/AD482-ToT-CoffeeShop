@@ -1,7 +1,8 @@
 package me.escoffier.quarkus.coffeeshop.dashboard;
 
+import com.systemcraftsman.demo.coffeeshop.model.Beverage;
+import com.systemcraftsman.demo.coffeeshop.util.GenericUtil;
 import io.smallrye.mutiny.Multi;
-import me.escoffier.quarkus.coffeeshop.model.Beverage;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.reactivestreams.Publisher;
 
@@ -19,7 +20,7 @@ public class BoardResource {
 
     @Inject
     @Channel("beverages")
-    Multi<Beverage> queue;
+    Multi<Beverage> beverageQueue;
 
     private final Jsonb json = JsonbBuilder.create();
 
@@ -28,7 +29,7 @@ public class BoardResource {
     public Publisher<String> getQueue() {
         return Multi.createBy().merging()
                 .streams(
-                        queue.map(json::toJson),
+                        beverageQueue.map(GenericUtil::createDTOFromBeverage).map(json::toJson),
                         getPingStream()
                 );
     }

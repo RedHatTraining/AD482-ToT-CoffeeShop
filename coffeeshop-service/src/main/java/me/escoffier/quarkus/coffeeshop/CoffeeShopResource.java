@@ -1,9 +1,13 @@
 package me.escoffier.quarkus.coffeeshop;
 
+import com.systemcraftsman.demo.coffeeshop.dto.BeverageDTO;
+import com.systemcraftsman.demo.coffeeshop.dto.OrderDTO;
+import com.systemcraftsman.demo.coffeeshop.model.Beverage;
+import com.systemcraftsman.demo.coffeeshop.model.BeverageState;
+import com.systemcraftsman.demo.coffeeshop.model.Order;
+import com.systemcraftsman.demo.coffeeshop.util.GenericUtil;
 import io.smallrye.mutiny.Uni;
 import me.escoffier.quarkus.coffeeshop.http.BaristaService;
-import me.escoffier.quarkus.coffeeshop.model.Beverage;
-import me.escoffier.quarkus.coffeeshop.model.Order;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
@@ -24,32 +28,38 @@ public class CoffeeShopResource {
     BaristaService barista;
 
     @PostMapping("/http")
-    public Uni<Beverage> http(Order order) {
-        return barista.order(order.setOrderId(getId()))
-                .onItem().invoke(beverage -> beverage.preparationState = Beverage.State.READY)
+    public Uni<BeverageDTO> http(OrderDTO orderDTO) {
+        orderDTO.setOrderId(getId());
+        return barista.order(orderDTO)
+                .onItem().invoke(beverage -> beverage.setPreparationState(BeverageState.READY))
                 .ifNoItem().after(Duration.ofMillis(1500)).fail()
-                .onFailure().recoverWithItem(createFallbackBeverage(order));
-    }
-
-    private Beverage createFallbackBeverage(Order order) {
-        return new Beverage(order, null, Beverage.State.FAILED);
+                .onFailure().recoverWithItem(createFallbackBeverage(orderDTO));
     }
 
     // Orders emitter (orders)
     @Autowired @Channel("orders") Emitter<Order> orders;
     // Queue emitter (beverages)
-    @Autowired @Channel("queue") Emitter<Beverage> queue;
+    @Autowired @Channel("queue") Emitter<Beverage> beverages;
 
     @PostMapping("/messaging")
-    public Order messaging(Order order) {
-        order = order.setOrderId(getId());
-        queue.send(Beverage.queued(order));
+    public OrderDTO messaging(OrderDTO orderDTO) {
+        orderDTO.setOrderId(getId());
+        Order order = GenericUtil.createOrderFromDTO(orderDTO);
+        beverages.send(createBeverageInQueue(order));
         orders.send(order);
-        return order;
+        return orderDTO;
     }
 
     private String getId() {
         return UUID.randomUUID().toString();
+    }
+
+    private BeverageDTO createFallbackBeverage(OrderDTO orderDTO) {
+        return new BeverageDTO(orderDTO.getProduct(), orderDTO.getName(),"", orderDTO.getOrderId(), BeverageState.FAILED);
+    }
+
+    private Beverage createBeverageInQueue(Order order) {
+        return new Beverage(order.getProduct(), order.getName(),"", order.getOrderId(), BeverageState.IN_QUEUE);
     }
 
 }

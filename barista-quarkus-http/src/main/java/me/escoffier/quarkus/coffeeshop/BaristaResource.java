@@ -1,8 +1,10 @@
 package me.escoffier.quarkus.coffeeshop;
 
+import com.systemcraftsman.demo.coffeeshop.model.Barista;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -13,17 +15,17 @@ import java.util.concurrent.CompletionStage;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import static me.escoffier.quarkus.coffeeshop.Names.pickAName;
 
 @Path("/barista")
 @Produces(MediaType.APPLICATION_JSON)
 public class BaristaResource {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger("HTTP-Barista");
+    private static final Logger LOGGER = LoggerFactory.getLogger(BaristaResource.class);
 
     private ExecutorService queue = Executors.newSingleThreadExecutor();
 
-    private String name = pickAName();
+    @Inject
+    private Barista barista;
 
     @POST
     public CompletionStage<Beverage> process(Order order) {
@@ -41,12 +43,12 @@ public class BaristaResource {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-        return new Beverage(order, name);
+        return new Beverage(order, barista.getName());
     }
 
     private Random random = new Random();
     int getPreparationTime() {
-        return random.nextInt(5) * 1000;
+        return random.nextInt(5) * 900;
     }
 
 }

@@ -1,5 +1,9 @@
 package me.escoffier.quarkus.coffeeshop;
 
+import com.systemcraftsman.demo.coffeeshop.model.Barista;
+import com.systemcraftsman.demo.coffeeshop.model.Beverage;
+import com.systemcraftsman.demo.coffeeshop.model.BeverageState;
+import com.systemcraftsman.demo.coffeeshop.model.Order;
 import io.smallrye.reactive.messaging.annotations.Blocking;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
@@ -7,16 +11,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import java.util.Random;
 
-import static me.escoffier.quarkus.coffeeshop.Names.pickAName;
-
 @ApplicationScoped
-public class KafkaBarista {
+public class KafkaBaristaService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger("Kafka-Barista");
+    private static final Logger LOGGER = LoggerFactory.getLogger(KafkaBaristaService.class);
 
-    private String name = pickAName();
+    @Inject
+    private Barista barista;
 
     @Incoming("orders")
     @Outgoing("queue")
@@ -33,7 +37,7 @@ public class KafkaBarista {
             Thread.currentThread().interrupt();
         }
         LOGGER.info("Order {} for {} is ready", order.getProduct(), order.getName());
-        return new Beverage(order, name, Beverage.State.READY);
+        return new Beverage(order.getProduct(), order.getName(), barista.getName(), order.getOrderId(), BeverageState.READY);
     }
 
     private Random random = new Random();
