@@ -5,11 +5,11 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 @RegisterForReflection
 public class Beverage {
 
-    public String beverage;
-    public String customer;
-    public String preparedBy;
-    public String orderId;
-    public BeverageState preparationState;
+    private String beverage;
+    private String customer;
+    private String preparedBy;
+    private String orderId;
+    private BeverageState preparationState;
 
     public Beverage() {
 
