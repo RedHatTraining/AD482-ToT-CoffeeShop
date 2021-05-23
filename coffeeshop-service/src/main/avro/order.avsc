@@ -14,6 +14,10 @@
      {
        "name": "orderId",
        "type": "string"
-     }
+     },
+    {
+      "name": "hasMarshmallows",
+      "type": "boolean"
+    }
   ]
 }

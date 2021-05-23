@@ -19,6 +19,10 @@
         "name": "orderId",
         "type": "string"
       },
+      {
+        "name": "hasMarshmallows",
+        "type": "boolean"
+      },
      {
           "name": "preparationState",
           "type": ["null", {

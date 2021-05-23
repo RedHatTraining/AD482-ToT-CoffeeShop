@@ -7,10 +7,10 @@ import com.systemcraftsman.demo.coffeeshop.model.Order;
 
 public class GenericUtil {
     public static Order createOrderFromDTO(OrderDTO orderDTO) {
-        return new Order(orderDTO.getProduct(), orderDTO.getName(), orderDTO.getOrderId());
+        return new Order(orderDTO.getProduct(), orderDTO.getName(), orderDTO.getOrderId(), orderDTO.getHasMarshmallows());
     }
 
     public static BeverageDTO createDTOFromBeverage(Beverage beverage) {
-        return new BeverageDTO(beverage.getBeverage(), beverage.getCustomer(), beverage.getPreparedBy(), beverage.getOrderId(), beverage.getPreparationState());
+        return new BeverageDTO(beverage.getBeverage(), beverage.getCustomer(), beverage.getPreparedBy(), beverage.getOrderId(), beverage.getHasMarshmallows(), beverage.getPreparationState());
     }
 }

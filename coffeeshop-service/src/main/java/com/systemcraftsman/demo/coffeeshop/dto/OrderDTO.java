@@ -5,6 +5,7 @@ public class OrderDTO {
     private String product;
     private String name;
     private String orderId;
+    private Boolean hasMarshmallows;
 
     public String getProduct() {
         return product;
@@ -31,5 +32,13 @@ public class OrderDTO {
     public OrderDTO setOrderId(String orderId) {
         this.orderId = orderId;
         return this;
+    }
+
+    public Boolean getHasMarshmallows() {
+        return hasMarshmallows;
+    }
+
+    public void setHasMarshmallows(Boolean hasMarshmallows) {
+        this.hasMarshmallows = hasMarshmallows;
     }
 }
