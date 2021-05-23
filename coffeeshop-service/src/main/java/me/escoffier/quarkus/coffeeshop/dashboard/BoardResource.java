@@ -19,7 +19,7 @@ public class BoardResource {
 
     @Inject
     @Channel("beverages")
-    Multi<Beverage> queue;
+    Multi<Beverage> beverageQueue;
 
     private final Jsonb json = JsonbBuilder.create();
 
@@ -28,7 +28,7 @@ public class BoardResource {
     public Publisher<String> getQueue() {
         return Multi.createBy().merging()
                 .streams(
-                        queue.map(json::toJson),
+                        beverageQueue.map(json::toJson),
                         getPingStream()
                 );
     }

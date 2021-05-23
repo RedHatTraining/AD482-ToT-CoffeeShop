@@ -95,12 +95,12 @@
         console.log("Customer name = " + order.name);
 
         if(method==="http") {
-            const state = {
+            const beverageState = {
                 customer: order.name,
                 beverage: order.product,
                 preparationState: "IN_PROGRESS"
             };
-            $("tbody").prepend(line(state));
+            $("tbody").prepend(line(beverageState));
             $("#order-button").addClass("disabled").attr("disabled", true);
         }
 
@@ -116,14 +116,14 @@
             cache: false
         }).done(function(response){
             if(method==="http") {
-                const state = {
+                const beverageState = {
                     orderId: response.orderId,
                     customer: order.name,
                     beverage: order.product,
                     preparedBy: response.preparedBy,
                     preparationState: response.preparationState
                 };
-                $('tbody tr:first').replaceWith(line(state));
+                $('tbody tr:first').replaceWith(line(beverageState));
                 $("#order-button").removeClass("disabled").removeAttr("disabled");
             }
         }).fail(function(err) {

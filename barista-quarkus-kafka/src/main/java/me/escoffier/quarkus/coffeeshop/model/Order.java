@@ -1,4 +1,4 @@
-package me.escoffier.quarkus.coffeeshop;
+package me.escoffier.quarkus.coffeeshop.model;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
 

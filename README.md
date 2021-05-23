@@ -1,140 +1,32 @@
-# Coffeeshop Demo with Quarkus
+# A Man, called Kafka, walks into a coffeeshop and...
 
-This directory contains a set of demo around _reactive_ in Quarkus with Kafka.
-It demonstrates the elasticity and resilience of the system.
+> ## Pre-Demo Preparations
+> 
+> ### Install the prereqs:
+> 
+> * Strimzi Kafka CLI:
+> 
+> `sudo pip install strimzi-kafka-cli`
+> 
+> * `oc` or `kubectl` 
+> 
+> Login to a Kubernetes or OpenShift cluster and create a new namespace/project called `reactive-coffeeshop-demo`.
+> 
+> `oc new-project reactive-coffeeshop-demo`
+> 
+> ### Install Apicurio Registry:
+> 
+> You have two options for this:
+> 
+> * Follow the instructions [here](https://access.redhat.com/documentation/en-us/red_hat_integration/2020-q4/html/getting_started_with_service_registry/installing-registry-ocp)
+> * Or follow this [guide](https://www.apicur.io/registry/docs/apicurio-registry/2.0.0.Final/getting-started/assembly-installing-registry-openshift.html)
+> 
+> In the end you should have an Apicurio Registry up and running in the same namespace, with an accesible Route URL like the following:
+> 
+> `http://example-apicurioregistry.reactive-coffeeshop-demo.apps.naxx-stage2.dev.nextcle.com/ui/artifacts`
+> 
+## The Coffeeshop
 
-## Build
+It's been a hard year because of the pandemic, and when you learn the lockdown is over, you want to go to the coffee shop you used to go before pandemic.
+It will be seen as the same old coffee shop, but so much not be sure about that, you will see a lot changed.
 
-Install java dependencies (<a href="https://adoptopenjdk.net/installation.html">java 11</a> and
-<a href="https://maven.apache.org/install.html">Maven</a> are required)
-
-
-```bash
-mvn clean package
-```
-
-Install node.js dependencies (<a href="https://nodejs.org/en/download/">node.js</a> is required)
-
-```bash
-cd barista-node-kafka/ && npm install
-```
-
-## Prerequisites
-
-Install <a href="https://docs.docker.com/get-docker/">Docker</a>.
-
-If you are not using a desktop system, install <a href="https://docs.docker.com/compose/install/">Docker Compose</a>.
-
-
-Install Kafka locally for the Kafka tools e.g.
-
-```bash
-brew install kafka
-```
-
-or on Linux
-
-* install recent kafka from <a href="https://kafka.apache.org/downloads">kafka</a> binaries and
-  ensure the bin directory is in your path.
-
-* edit create-topics.sh and replace all instances of `kafka-topics` with `kafka-topics.sh`
-
-Run Kafka with:
-
-```bash
-docker-compose up
-```
-
-In case of previous run, you can clean the state with
-
-```bash
-docker-compose down
-docker-compose rm
-```
-
-Then, create the `orders` topic with `./create-topics.sh`
-
-# Run the demo
-
-You need to run:
-
-* the coffee shop service
-* one or more of the the HTTP, Quarkus Kafka or Node.js Kafka baristas
-
-In 3 or more terminals: 
-
-```bash
-cd coffeeshop-service
-mvn compile quarkus:dev
-```
-
-#### HTTP barista
-
-```bash
-cd barista-quarkus-http
-java -jar target/barista-http-1.0-SNAPSHOT-runner.jar
-```
-
-#### Quarkus Barista
-
-```bash
-cd barista-quarkus-kafka
-mvn compile quarkus:dev
-```
-
-#### Node.js Barista
-
-```bash
-cd barista-node-kafka
-npm start
-```
-
-# Execute with HTTP
-
-The first part of the demo shows HTTP interactions:
-
-* Barista code: `me.escoffier.quarkus.coffeeshop.BaristaResource`
-* CoffeeShop code: `me.escoffier.quarkus.coffeeshop.CoffeeShopResource.http`
-* Generated client: `me.escoffier.quarkus.coffeeshop.http.BaristaService`
-
-Order coffees by opening `http://localhost:8080`. Select the HTTP method.
-
-Stop the HTTP Barista, you can't order coffee anymore.
-
-# Execute with Kafka
-
-* Barista code: `me.escoffier.quarkus.coffeeshop.KafkaBarista`: Read from `orders`, write to `queue`
-* Bridge in the CoffeeShop: `me.escoffier.quarkus.coffeeshop.messaging.CoffeeShopResource#messaging` just enqueue the orders in a single thread (one counter)
-* Get prepared beverages on `me.escoffier.quarkus.coffeeshop.dashboard.BoardResource` and send to SSE
-
-* Open browser to http://localhost:8080/
-* Order coffee with Order coffees by opening `http://localhost:8080`. Select the messaging method.
-
-# Baristas do breaks
-
-1. Stop the Kafka barista(s)
-1. Continue to enqueue order
-1. On the dashboard, the orders are in the "IN QUEUE" state
-1. Restart the barista
-1. They are processed
-
-# 2 or more baristas are better
-
-#### Quarkus
-
-1. Build `barista-quarkus-kafka` with native image:
-   ```bash
-   mvn package -Pnative
-   ```
-1. Start a second barista with: 
-    ```bash
-    ./barista-quarkus-kafka/target/barista-kafka-1.0-SNAPSHOT-runner -Dquarkus.http.port=9999
-    ```
-1. Order more coffee
-
-#### Node.js
-
-1. Open a new terminal and run `npm  start` again.
-
-<br />
-The dashboard shows that the load is dispatched among the baristas.
