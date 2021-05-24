@@ -6,6 +6,7 @@ public class Beverage {
     private String customer;
     private String preparedBy;
     private String orderId;
+    private BeverageState preparationState;
 
     public Beverage() {
 
@@ -52,5 +53,13 @@ public class Beverage {
     public Beverage setOrderId(String orderId) {
         this.orderId = orderId;
         return this;
+    }
+
+    public BeverageState getPreparationState() {
+        return preparationState;
+    }
+
+    public void setPreparationState(BeverageState preparationState) {
+        this.preparationState = preparationState;
     }
 }
