@@ -28,5 +28,13 @@
 ## The Coffeeshop
 
 It's been a hard year because of the pandemic, and when you learn the lockdown is over, you want to go to the coffee shop you used to go before pandemic.
-It will be seen as the same old coffee shop, but so much not be sure about that, you will see a lot changed.
+It will be seen as the same old coffee shop, but not be sure about that so much, you will see a lot changed.
+
+You want to order a favorite of yours, "frappucino" and a barista you know "Isla" takes care of your order.
+
+"Ready" she says. "Gracias!" you say in return and enjoy your drink.
+
+About an hour or so, you want to order another one. Isla is still there and ready take care of your order, but she can fullfill your request somehow.
+When you ask this to her, she simply says: 
+
 
