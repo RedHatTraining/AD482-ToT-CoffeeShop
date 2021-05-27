@@ -72,16 +72,21 @@ who is available".
 
 Kafka solved a lot of problem in this case. He simply provided an event backbone, so that the orders can be handled seamlessly.
 
-Looking around peacefully you realize a kind of fight or war outside. The door was open and you see a old white car with a ghost sign on it.
+Looking around peacefully you realize a kind of fight or war outside. 
+The door was open and you see a old white car with a ghost sign on it.
 "OMG, the Ghostbusters" people say. You think someone should've call them in the previous situation because you realize you said the magic words
 but anyways, they are here, and they are either being chased by or fighting with a giant marshmallow man that looks like come out of a famous 80s movie!
 
-Ghostbusters point their weird beam gun to the giant marshmallow man and fired them. This made the giant marshmallow man blow up and literally everywhere is
+Ghostbusters point their weird beam gun to the giant marshmallow man and fired. 
+This made the giant marshmallow man blow up and literally everywhere is
 covered with marshmallow, including your idea to have your future beverages with marshmallow!
 
-You order a frappucino again, this time with marshmallows(!), because you think everything is already covered with marshmallows.
-The order goes into the queue with your marshmallows request. But when the order is ready, you see your order does not have any marshmallows
-included. When you ask this to the barista Emily, she says "there is no way to include marshmallows upon personal request, there are rules and
+When everything is calmed down, a few hours later, you order a frappucino again, this time with marshmallows(!). 
+Because you think everything is already covered with marshmallows.
+The order goes into the queue with your marshmallows request. 
+But when the order is ready, you see your order does not have any marshmallows
+included. 
+When you ask this to the barista Emily, she says "there is no way to include marshmallows upon personal request, there are rules and
 there must be a common contract for that; between the system and baristas".
 
 You ask this to Mr. Kafka, and he mentions something like a schema registry and something called Apicurio while drinking his hot chocolate slowly.
