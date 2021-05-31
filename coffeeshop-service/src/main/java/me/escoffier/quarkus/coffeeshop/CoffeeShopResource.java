@@ -37,13 +37,18 @@ public class CoffeeShopResource {
     }
 
     // Orders emitter (orders)
-    @Autowired @Channel("orders") Emitter<Order> orders;
+    @Autowired
+    @Channel("orders")
+    Emitter<Order> orders;
     // Queue emitter (beverages)
-    @Autowired @Channel("queue") Emitter<Beverage> beverages;
+    @Autowired
+    @Channel("queue")
+    Emitter<Beverage> beverages;
 
     @PostMapping("/messaging")
     public OrderDTO messaging(OrderDTO orderDTO) {
         orderDTO.setOrderId(getId());
+        orderDTO.setHasMarshmallows(Boolean.TRUE);
         Order order = GenericUtil.createOrderFromDTO(orderDTO);
         beverages.send(createBeverageInQueue(order));
         orders.send(order);
@@ -55,11 +60,11 @@ public class CoffeeShopResource {
     }
 
     private BeverageDTO createFallbackBeverage(OrderDTO orderDTO) {
-        return new BeverageDTO(orderDTO.getProduct(), orderDTO.getName(),"", orderDTO.getOrderId(), BeverageState.FAILED);
+        return new BeverageDTO(orderDTO.getProduct(), orderDTO.getName(), "", orderDTO.getOrderId(), orderDTO.getHasMarshmallows(), BeverageState.FAILED);
     }
 
     private Beverage createBeverageInQueue(Order order) {
-        return new Beverage(order.getProduct(), order.getName(),"", order.getOrderId(), BeverageState.IN_QUEUE);
+        return new Beverage(order.getProduct(), order.getName(), "", order.getOrderId(), order.getHasMarshmallows(), BeverageState.IN_QUEUE);
     }
 
 }

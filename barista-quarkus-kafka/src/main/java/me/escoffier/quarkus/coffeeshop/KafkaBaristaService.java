@@ -37,7 +37,7 @@ public class KafkaBaristaService {
             Thread.currentThread().interrupt();
         }
         LOGGER.info("Order {} for {} is ready", order.getProduct(), order.getName());
-        return new Beverage(order.getProduct(), order.getName(), barista.getName(), order.getOrderId(), BeverageState.READY);
+        return new Beverage(order.getProduct(), order.getName(), barista.getName(), order.getOrderId(), order.getHasMarshmallows(), BeverageState.READY);
     }
 
     private Random random = new Random();
