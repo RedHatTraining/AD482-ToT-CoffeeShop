@@ -29,7 +29,7 @@
 
 It's been a hard year because of the pandemic, and when you learn the lockdown is over, you want to go to the coffee shop you used to go before pandemic.
 
-> TODO: Image here
+<img width="604" alt="Screen Shot 2021-04-24 at 16 14 40" src="https://user-images.githubusercontent.com/10568159/120249950-2e68ef80-c285-11eb-9bd6-c52ada97ab6a.png">
 
 It will be seen as the same old coffee shop, but not be sure about that so much, you will see a lot changed.
 
