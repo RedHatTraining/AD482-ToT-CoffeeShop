@@ -70,7 +70,7 @@ The order did not fail and when they came back you saw your order is prepared su
 
 You ask Mr. Kafka what kind of change specifically he did.
 Did he change the rule? Are these baristas new?
-Do they work in a different way?
+Do they work differently?
 
 "No" he says. "They still can prepare a beverage in about 5 seconds, but now it does not make the order fail, now my order methods is being used,
 I provide an async, persisted mechanism; let's call this `even-driven coffee ordering`.
@@ -107,5 +107,6 @@ You put the contract on the wall, everybody agreed upon it and on checking it ou
 
 You make another order and nice, you get your marshmallow frappucino! (Just be sure you don't be diabetic coma after all these).
 
-Since all the system works properly right now, you think it's a good time to try out the contract based coffee ordering.
+Since all the system works properly right now, you think it's a good time to play with the contract based coffee ordering.
 You want to see what happens if the contract changes.
+You walk to the wall and strike-through the marshmallows
