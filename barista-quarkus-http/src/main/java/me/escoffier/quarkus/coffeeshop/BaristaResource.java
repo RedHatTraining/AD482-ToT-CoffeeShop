@@ -48,7 +48,7 @@ public class BaristaResource {
 
     private Random random = new Random();
     int getPreparationTime() {
-        return random.nextInt(5) * 900;
+        return random.nextInt(5) * 1000;
     }
 
 }
