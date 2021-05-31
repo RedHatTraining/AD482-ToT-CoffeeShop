@@ -28,17 +28,31 @@
 ## The Coffee Shop
 
 It's been a hard year because of the pandemic, and when you learn the lockdown is over, you want to go to the coffee shop you used to go before pandemic.
+
+> TODO: Image here
+
 It will be seen as the same old coffee shop, but not be sure about that so much, you will see a lot changed.
+
+> TODO: Run the coffeeshop app here
+> TODO: Show the coffeeshop app
 
 You want to order a favorite of yours, "frappucino" and a barista you know "Isla" takes care of your order.
 
+> TODO: Instructions and image here
+
 "Ready" she says. "Gracias!" you say in return and enjoy your drink.
 
-About an hour or so, you want to order another one. Isla is still there and ready take care of your order, but she can fulfill your request somehow.
+About an hour or so, you want to order another one. Isla is still there and ready take care of your order, 
+but she can not fulfill your request somehow.
+
+> TODO: image here
+
 When you ask this to her, she simply says:
 
 "I have a preparation time around 5 seconds, but this coffee shop has strict rules on preparing the beverage in 1.5 seconds.
 So I have to either prepare it in 1.5 seconds or never."
+
+> TODO: Code explanation here
 
 "What!" you say, "even 5 seconds is very fast to prepare a beverage it must be harsh to work here."
 
@@ -48,10 +62,14 @@ You should order again".
 "Well that's weird" you think and Isla goes for a rest.
 You order your beloved frappucino again, again and again, but it fails, fails and fails.
 
+> TODO: Image here
+
 You see another barista is coming up for the shift, and make your order.
 After about 10 times or so, the new barista Zoe, could prepare your order within just 1.5 seconds!
 
 "This is a very big problem" you think. But who you are gonna call? Ghostbusters? A-team? MacGyver?
+
+> TODO: Image A-team photo here
 
 While thinking about all these and taking a sip of your frappucino (you are trying to drink it slowly this time),
 a man with a fedora hat, who will introduce himself later as "Kafka", walks into the coffee shop and sits beside you.
@@ -60,6 +78,9 @@ Orders a "Chai" -actually by trying a couple of times- and faces the same proble
 He says "I know how to solve this problem" and gathers up all the baristas and the coffee shop manager himself for probably a "rule" change.
 
 A couple of hours later the solution he comes up with is: using the `Messaging/Kafka` order method.
+
+> TODO: Create topics here
+> TODO: Run one of the kafka baristas
 
 They wanted you to try it out, and you ordered a latte this time. Actually a lot of lattes.
 
@@ -109,4 +130,13 @@ You make another order and nice, you get your marshmallow frappucino! (Just be s
 
 Since all the system works properly right now, you think it's a good time to play with the contract based coffee ordering.
 You want to see what happens if the contract changes.
-You walk to the wall and strike-through the marshmallows
+You walk to the wall and strike-through the marshmallows secretly and go back to your chair to watch what happens.
+
+The contract change is visible, and the baristas easily notice the change. 
+With everything covered with marshmallows, how it would be possible to serve beverages without the marshmallow option!
+
+The baristas could serve to no one. No orders can be created, so the order queue is empty.
+You observed that as the new rule of the coffee shop, baristas can not disobey it -including the manager-, but accept it and agree on it.
+
+Without causing any more issues to the coffee shop (and without making the coffee shop manager angry), 
+you write down the `marshmallows` option on the contract again and see the baristas take a deep breath and continue to receive orders with the marshmallow option.
