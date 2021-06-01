@@ -1,5 +1,6 @@
 # A Man, called Kafka, walks into a coffee shop and...
 
+
 > ## Pre-Demo Preparations
 >
 > ### Install the prereqs:
@@ -33,7 +34,18 @@ It's been a hard year because of the pandemic, and when you learn the lockdown i
 
 It will be seen as the same old coffee shop, but not be sure about that so much, you will see a lot changed.
 
-> TODO: Run the coffeeshop app here
+> Let's start. First clone the `reactive-coffeeshop-demo` repository:
+> 
+> ```shell
+> git clone https://github.com/systemcraftsman/reactive-coffeeshop-demo.git
+> ```
+> 
+> And don't forget to checkout the `original` repo. That's where we are gonna start:
+> 
+> ```shell
+> git checkout original
+> ```
+> 
 > TODO: Show the coffeeshop app
 
 You want to order a favorite of yours, "frappucino" and a barista you know "Isla" takes care of your order.
