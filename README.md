@@ -40,7 +40,7 @@
 >
 > <!-- Prereq: https://github.com/systemcraftsman/strimzi-kafka-cli/issues/72 -->
 > ```shell
->  kfk clusters --create --cluster my-cluster --add-listener --listener-name external --listener-port 9094 --listener-type route --listener-tls true  -n reactive-coffeeshop-demo
+>  kfk clusters --create --cluster my-cluster --add-listener --listener-name external --listener-port 9094 --listener-type route --listener-tls true  -n reactive-coffeeshop-demo -y
 > ```
 > 
 ## The Coffee Shop
