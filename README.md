@@ -3,7 +3,9 @@
 
 > ## Pre-Demo Preparations
 >
-> ### Install the prereqs:
+> ### Install/Prepare the prereqs:
+> 
+> * A running Openshift/Kubernetes cluster
 >
 > * Strimzi Kafka CLI:
 >
@@ -26,6 +28,21 @@
 >
 > `http://example-apicurioregistry.reactive-coffeeshop-demo.apps.naxx-stage2.dev.nextcle.com/ui/artifacts`
 >
+> ### Install Strimzi Operator
+> 
+> `Skip this part if an operator is already installed in your Openshift/Kubernetes cluster.`
+> 
+> ```shell
+>  kfk operator --install -n reactive-coffeeshop-demo
+> ```
+> 
+> After that, the operator is installed you can create a cluster:
+>
+> <!-- Prereq: https://github.com/systemcraftsman/strimzi-kafka-cli/issues/72 -->
+> ```shell
+>  kfk clusters --create --cluster my-cluster --add-listener --listener-name external --listener-port 9094 --listener-type route --listener-tls true  -n reactive-coffeeshop-demo
+> ```
+> 
 ## The Coffee Shop
 
 It's been a hard year because of the pandemic, and when you learn the lockdown is over, you want to go to the coffee shop you used to go before pandemic.
@@ -34,7 +51,7 @@ It's been a hard year because of the pandemic, and when you learn the lockdown i
 
 It will be seen as the same old coffee shop, but not be sure about that so much, you will see a lot changed.
 
-> Let's start. First clone the `reactive-coffeeshop-demo` repository:
+> First clone the `reactive-coffeeshop-demo` repository:
 > 
 > ```shell
 > git clone https://github.com/systemcraftsman/reactive-coffeeshop-demo.git
@@ -43,10 +60,27 @@ It will be seen as the same old coffee shop, but not be sure about that so much,
 > And don't forget to checkout the `original` repo. That's where we are gonna start:
 > 
 > ```shell
+> cd reactive-coffeeshop-demo
+> 
 > git checkout original
 > ```
 > 
-> TODO: Show the coffeeshop app
+> After switching to the right branch, you need to specify the 
+> 
+> Now run the `cofeeshop-service` and `barista-quarkus-http` service which are Quarkus applications.
+> 
+> First run the `coffeeshop-service`:
+> 
+> ```shell
+>  cd cofeeshop-service
+> ```
+> 
+> In another terminal window, run the `barista-quarkus-http` service:
+>
+> ```shell
+>  cd cofeeshop-service
+> ```
+> 
 
 You want to order a favorite of yours, "frappucino" and a barista you know "Isla" takes care of your order.
 
