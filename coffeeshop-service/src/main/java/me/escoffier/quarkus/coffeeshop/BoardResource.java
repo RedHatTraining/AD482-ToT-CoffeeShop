@@ -1,4 +1,4 @@
-package me.escoffier.quarkus.coffeeshop.dashboard;
+package me.escoffier.quarkus.coffeeshop;
 
 import io.smallrye.mutiny.Multi;
 import me.escoffier.quarkus.coffeeshop.model.Beverage;
