@@ -1,4 +1,4 @@
-package me.escoffier.quarkus.coffeeshop.dashboard;
+package me.escoffier.quarkus.coffeeshop;
 
 import com.systemcraftsman.demo.coffeeshop.model.Beverage;
 import com.systemcraftsman.demo.coffeeshop.util.GenericUtil;
