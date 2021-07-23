@@ -10,6 +10,7 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly-additions.min.css">
 </head>
 <body>
+<div style="margin: auto;width: 50%;"><img style="height: 200px" src="coffeeshop_banner.png"></div>
 
 <div class="container">
 
@@ -25,17 +26,14 @@
         <div class="form-group">
             <label class="col-md-2 control-label" for="orderMethod">Order method</label>
             <div class="col-md-10">
-                <select id="orderMethod">
-                    <option value="http">HTTP</option>
-                    <option value="messaging">Messaging / Kafka</option>
-                </select>
+                <label id="orderMethod" value="http">HTTP</label>
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" for="product">Product</label>
             <div class="col-md-10">
                 <select id="product">
-                    <option value="frappuccino">Frappuccino</option>
+                    <option value="cappuccino">Cappuccino</option>
                     <option value="chai">Chai</option>
                     <option value="hot-chocolate">Hot Chocolate</option>
                     <option value="latte">Latte</option>
@@ -87,7 +85,7 @@
 <script>
 
     $("#orderForm").submit(function(event){
-        const method = $("#orderMethod option:selected").val();
+        const method = "http";
         const order = {
             name: $("#customerName").val(),
             product: $("#product option:selected").val()
@@ -132,22 +130,6 @@
             $("#order-button").removeClass("disabled").removeAttr("disabled");
             console.error(err);
         });
-    });
-
-    $(function () {
-        const source = new EventSource("/queue");
-        source.onmessage = function(e) {
-            if (e.data === "{}") {
-                return;
-            }
-            console.log(e);
-            const beverage = JSON.parse(e.data);
-            if(beverage.preparationState==="IN_QUEUE")
-                $("tbody").prepend(line(beverage));
-            if(beverage.preparationState==="READY")
-                $("#"+beverage.orderId).replaceWith(line(beverage));
-            
-        };
     });
 
     function line(order) {

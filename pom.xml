@@ -36,7 +36,6 @@
     </dependencyManagement>
 
     <modules>
-        <module>barista-quarkus-kafka</module>
         <module>barista-quarkus-http</module>
         <module>coffeeshop-service</module>
     </modules>
