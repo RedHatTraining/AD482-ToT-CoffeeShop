@@ -41,6 +41,7 @@ public class CoffeeShopResource {
     @PostMapping("/messaging")
     public Order messaging(Order order) {
         order.setOrderId(getId());
+        order.setHasMarshmallows(Boolean.TRUE);
         beverages.send(createBeverageInQueue(order));
         orders.send(order);
         return order;

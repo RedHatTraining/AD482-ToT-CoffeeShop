@@ -65,6 +65,7 @@
         <tr>
             <th>Customer</th>
             <th>Product</th>
+            <th>Marshmallows!</th>
             <th>Prepared By</th>
             <th>State</th>
         </tr>
@@ -99,7 +100,8 @@
             const beverageState = {
                 customer: order.name,
                 beverage: order.product,
-                preparationState: "IN_PROGRESS"
+                preparationState: "IN_PROGRESS",
+                hasMarshmallows: order.hasMarshmallows
             };
             $("tbody").prepend(line(beverageState));
             $("#order-button").addClass("disabled").attr("disabled", true);
@@ -162,6 +164,7 @@
         return "<tr id='" + id + "'>" +
             "<td>" + customer + "</td>" +
             "<td>" + product + "</td>" +
+            "<td>" + order.hasMarshmallows + "</td>" +
             "<td>" + barista + "</td>" +
             "<td>" + order.preparationState + "</td></tr>";
     }

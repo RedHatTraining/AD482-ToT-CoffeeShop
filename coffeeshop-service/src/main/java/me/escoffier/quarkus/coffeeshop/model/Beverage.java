@@ -10,6 +10,7 @@ public class Beverage {
     private String preparedBy;
     private String orderId;
     private BeverageState preparationState;
+    private Boolean hasMarshmallows;
 
     public Beverage() {
 
@@ -21,6 +22,7 @@ public class Beverage {
         this.orderId = order.getOrderId();
         this.preparedBy = baristaName;
         this.preparationState = beverageState;
+        this.hasMarshmallows = order.getHasMarshmallows();
     }
 
     public String getBeverage() {
@@ -65,5 +67,13 @@ public class Beverage {
 
     public void setPreparationState(BeverageState preparationState) {
         this.preparationState = preparationState;
+    }
+
+    public Boolean getHasMarshmallows() {
+        return hasMarshmallows;
+    }
+
+    public void setHasMarshmallows(Boolean hasMarshMallows) {
+        this.hasMarshmallows = hasMarshMallows;
     }
 }

@@ -8,6 +8,7 @@ public class Order {
     private String product;
     private String name;
     private String orderId;
+    private Boolean hasMarshmallows;
 
     public String getProduct() {
         return product;
@@ -35,4 +36,13 @@ public class Order {
         this.orderId = orderId;
         return this;
     }
+
+    public Boolean getHasMarshmallows() {
+        return this.hasMarshmallows;
+    }
+
+    public void setHasMarshmallows(Boolean hasMarshmallows) {
+        this.hasMarshmallows = hasMarshmallows;
+    }
+
 }
