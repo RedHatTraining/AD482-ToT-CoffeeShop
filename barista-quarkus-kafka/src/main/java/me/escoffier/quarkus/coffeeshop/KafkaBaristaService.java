@@ -1,12 +1,9 @@
 package me.escoffier.quarkus.coffeeshop;
 
 import com.systemcraftsman.demo.coffeeshop.model.Barista;
-import io.smallrye.reactive.messaging.annotations.Blocking;
 import me.escoffier.quarkus.coffeeshop.model.Beverage;
 import me.escoffier.quarkus.coffeeshop.model.BeverageState;
 import me.escoffier.quarkus.coffeeshop.model.Order;
-import org.eclipse.microprofile.reactive.messaging.Incoming;
-import org.eclipse.microprofile.reactive.messaging.Outgoing;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,12 +19,7 @@ public class KafkaBaristaService {
     @Inject
     private Barista barista;
 
-    @Incoming("orders")
-    @Outgoing("queue")
-    @Blocking
-    public Beverage process(Order order) {
-        return prepare(order);
-    }
+    // TODO: Prepare the order and publish it into the queue
 
     Beverage prepare(Order order) {
         int delay = getPreparationTime();
