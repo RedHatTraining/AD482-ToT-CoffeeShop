@@ -74,15 +74,7 @@
       <version>4.0.2</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>io.apicurio</groupId>
-      <artifactId>apicurio-registry-utils-serde</artifactId>
-      <version>${apicurio.registry.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-avro</artifactId>
-    </dependency>
+    <!-- Add apicurio-registry-utils-serde and quarkus-avro dependencies-->
   </dependencies>
   <build>
     <plugins>
