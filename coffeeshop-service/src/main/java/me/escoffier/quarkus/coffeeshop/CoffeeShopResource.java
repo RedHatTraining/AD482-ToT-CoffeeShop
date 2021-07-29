@@ -1,11 +1,11 @@
 package me.escoffier.quarkus.coffeeshop;
 
-import com.systemcraftsman.demo.coffeeshop.dto.BeverageDTO;
-import com.systemcraftsman.demo.coffeeshop.dto.OrderDTO;
-import com.systemcraftsman.demo.coffeeshop.model.Beverage;
-import com.systemcraftsman.demo.coffeeshop.model.BeverageState;
-import com.systemcraftsman.demo.coffeeshop.model.Order;
-import com.systemcraftsman.demo.coffeeshop.util.GenericUtil;
+import com.redhat.training.demo.coffeeshop.dto.BeverageDTO;
+import com.redhat.training.demo.coffeeshop.dto.OrderDTO;
+import com.redhat.training.demo.coffeeshop.model.Beverage;
+import com.redhat.training.demo.coffeeshop.model.BeverageState;
+import com.redhat.training.demo.coffeeshop.model.Order;
+import com.redhat.training.demo.coffeeshop.util.GenericUtil;
 import io.smallrye.mutiny.Uni;
 import me.escoffier.quarkus.coffeeshop.http.BaristaService;
 import org.eclipse.microprofile.reactive.messaging.Channel;

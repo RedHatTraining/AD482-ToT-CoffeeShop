@@ -1,9 +1,9 @@
 package me.escoffier.quarkus.coffeeshop;
 
-import com.systemcraftsman.demo.coffeeshop.model.Barista;
-import com.systemcraftsman.demo.coffeeshop.model.Beverage;
-import com.systemcraftsman.demo.coffeeshop.model.BeverageState;
-import com.systemcraftsman.demo.coffeeshop.model.Order;
+import com.redhat.training.demo.coffeeshop.model.Barista;
+import com.redhat.training.demo.coffeeshop.model.Beverage;
+import com.redhat.training.demo.coffeeshop.model.BeverageState;
+import com.redhat.training.demo.coffeeshop.model.Order;
 import io.smallrye.reactive.messaging.annotations.Blocking;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;

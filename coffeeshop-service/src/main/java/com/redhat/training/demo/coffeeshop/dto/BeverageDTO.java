@@ -1,6 +1,6 @@
-package com.systemcraftsman.demo.coffeeshop.dto;
+package com.redhat.training.demo.coffeeshop.dto;
 
-import com.systemcraftsman.demo.coffeeshop.model.BeverageState;
+import com.redhat.training.demo.coffeeshop.model.BeverageState;
 
 public class BeverageDTO {
 
@@ -14,7 +14,7 @@ public class BeverageDTO {
     public BeverageDTO() {
     }
 
-    public BeverageDTO(java.lang.String beverage, java.lang.String customer, java.lang.String preparedBy, java.lang.String orderId, java.lang.Boolean hasMarshmallows, com.systemcraftsman.demo.coffeeshop.model.BeverageState preparationState) {
+    public BeverageDTO(java.lang.String beverage, java.lang.String customer, java.lang.String preparedBy, java.lang.String orderId, java.lang.Boolean hasMarshmallows, com.redhat.training.demo.coffeeshop.model.BeverageState preparationState) {
         this.beverage = beverage;
         this.customer = customer;
         this.preparedBy = preparedBy;

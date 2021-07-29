@@ -1,5 +1,5 @@
 {
-  "namespace": "com.systemcraftsman.demo.coffeeshop.model",
+  "namespace": "com.redhat.training.demo.coffeeshop.model",
   "type": "record",
   "name": "Beverage",
   "fields": [

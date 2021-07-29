@@ -1,9 +1,9 @@
-package com.systemcraftsman.demo.coffeeshop.util;
+package com.redhat.training.demo.coffeeshop.util;
 
-import com.systemcraftsman.demo.coffeeshop.dto.BeverageDTO;
-import com.systemcraftsman.demo.coffeeshop.dto.OrderDTO;
-import com.systemcraftsman.demo.coffeeshop.model.Beverage;
-import com.systemcraftsman.demo.coffeeshop.model.Order;
+import com.redhat.training.demo.coffeeshop.dto.BeverageDTO;
+import com.redhat.training.demo.coffeeshop.dto.OrderDTO;
+import com.redhat.training.demo.coffeeshop.model.Beverage;
+import com.redhat.training.demo.coffeeshop.model.Order;
 
 public class GenericUtil {
     public static Order createOrderFromDTO(OrderDTO orderDTO) {

@@ -1,7 +1,7 @@
 package me.escoffier.quarkus.coffeeshop.http;
 
-import com.systemcraftsman.demo.coffeeshop.dto.BeverageDTO;
-import com.systemcraftsman.demo.coffeeshop.dto.OrderDTO;
+import com.redhat.training.demo.coffeeshop.dto.BeverageDTO;
+import com.redhat.training.demo.coffeeshop.dto.OrderDTO;
 import io.smallrye.mutiny.Uni;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 

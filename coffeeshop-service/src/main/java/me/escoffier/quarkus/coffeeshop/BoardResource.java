@@ -1,7 +1,7 @@
 package me.escoffier.quarkus.coffeeshop;
 
-import com.systemcraftsman.demo.coffeeshop.model.Beverage;
-import com.systemcraftsman.demo.coffeeshop.util.GenericUtil;
+import com.redhat.training.demo.coffeeshop.model.Beverage;
+import com.redhat.training.demo.coffeeshop.util.GenericUtil;
 import io.smallrye.mutiny.Multi;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.reactivestreams.Publisher;
