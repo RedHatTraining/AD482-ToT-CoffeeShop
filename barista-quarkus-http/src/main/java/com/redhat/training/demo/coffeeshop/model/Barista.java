@@ -1,6 +1,6 @@
-package com.systemcraftsman.demo.coffeeshop.model;
+package com.redhat.training.demo.coffeeshop.model;
 
-import com.systemcraftsman.demo.coffeeshop.util.NameUtil;
+import com.redhat.training.demo.coffeeshop.util.NameUtil;
 
 import javax.inject.Singleton;
 
