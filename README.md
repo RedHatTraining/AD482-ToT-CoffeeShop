@@ -7,7 +7,7 @@ Please checkout the relevant branches per scene below.
 ## Scenes
 
 ### Scene 1 - Start
-base
+Exercise/Solution: base
 
 ### Scene 2 - Messaging Implementation
 
