@@ -1,6 +1,6 @@
 package me.escoffier.quarkus.coffeeshop;
 
-import com.systemcraftsman.demo.coffeeshop.model.Barista;
+import com.redhat.training.demo.coffeeshop.model.Barista;
 import com.systemcraftsman.demo.coffeeshop.model.Beverage;
 import com.systemcraftsman.demo.coffeeshop.model.BeverageState;
 import com.systemcraftsman.demo.coffeeshop.model.Order;

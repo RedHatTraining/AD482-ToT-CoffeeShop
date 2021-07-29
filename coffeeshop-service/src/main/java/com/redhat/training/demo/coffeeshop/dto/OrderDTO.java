@@ -1,4 +1,4 @@
-package com.systemcraftsman.demo.coffeeshop.dto;
+package com.redhat.training.demo.coffeeshop.dto;
 
 public class OrderDTO {
 
