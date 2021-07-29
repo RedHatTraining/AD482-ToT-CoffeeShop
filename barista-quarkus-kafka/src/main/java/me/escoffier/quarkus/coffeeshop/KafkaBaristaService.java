@@ -1,6 +1,6 @@
 package me.escoffier.quarkus.coffeeshop;
 
-import com.systemcraftsman.demo.coffeeshop.model.Barista;
+import com.redhat.training.demo.coffeeshop.model.Barista;
 import io.smallrye.reactive.messaging.annotations.Blocking;
 import me.escoffier.quarkus.coffeeshop.model.Beverage;
 import me.escoffier.quarkus.coffeeshop.model.BeverageState;

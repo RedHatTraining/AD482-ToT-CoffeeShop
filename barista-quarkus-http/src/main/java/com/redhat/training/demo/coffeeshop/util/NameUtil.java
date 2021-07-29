@@ -1,4 +1,4 @@
-package com.systemcraftsman.demo.coffeeshop.util;
+package com.redhat.training.demo.coffeeshop.util;
 
 import java.util.Arrays;
 import java.util.List;

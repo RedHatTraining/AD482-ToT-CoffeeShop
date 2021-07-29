@@ -1,6 +1,6 @@
 package me.escoffier.quarkus.coffeeshop;
 
-import com.systemcraftsman.demo.coffeeshop.model.Barista;
+import com.redhat.training.demo.coffeeshop.model.Barista;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
