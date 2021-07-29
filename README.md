@@ -11,18 +11,18 @@ base
 
 ### Scene 2 - Messaging Implementation
 
-Exercise: exercise/messaging
-Solution: solution/messaging
+* Exercise: exercise/messaging
+* Solution: solution/messaging
 
 ### Scene 3 - Marshmallows on Messaging
 
-Exercise: exercise/messaging-marshmallows
-Solution: solution/messaging-marshmallows
+* Exercise: exercise/messaging-marshmallows
+* Solution: solution/messaging-marshmallows
 
 ### Scene 4 - Marshmallows on Messaging with Structure
 
-Exercise: exercise/marshmallows
-Solution: solution/marshmallows
+* Exercise: exercise/marshmallows
+* Solution: solution/marshmallows
 
 ## Resources
 
