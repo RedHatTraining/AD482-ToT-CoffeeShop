@@ -38,3 +38,5 @@ Exercise&Solution branch: **base**
 * https://github.com/cescoffier/reactive-coffeeshop-demo
 * https://www.youtube.com/watch?v=F-a4vNoK05M
 
+**Presentation:** https://speakerdeck.com/mabulgu/a-day-in-a-coffee-shop-building-event-driven-systems-with-structure
+
