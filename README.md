@@ -1,26 +1,42 @@
-# A Man, called Kafka, walks into a coffee shop and...
+# AD482-ToT-CoffeeShop
 
-> ## Pre-Demo Preparations
->
-> ### Install the prereqs:
->
-> * Strimzi Kafka CLI:
->
-> `sudo pip install strimzi-kafka-cli`
->
-> * `oc` or `kubectl`
->
-> Login to a Kubernetes or OpenShift cluster and create a new namespace/project called `reactive-coffeeshop-demo`.
->
-> `oc new-project reactive-coffeeshop-demo`
->
-> ### Install Apicurio Registry:
->
-> You have two options for this:
->
-> * Follow the instructions [here](https://access.redhat.com/documentation/en-us/red_hat_integration/2020-q4/html/getting_started_with_service_registry/installing-registry-ocp)
-> * Or follow this [guide](https://www.apicur.io/registry/docs/apicurio-registry/2.0.0.Final/getting-started/assembly-installing-registry-openshift.html)
->
-> In the end you should have an Apicurio Registry up and running in the same namespace, with an accesible Route URL like the following:
->
-> `http://example-apicurioregistry.reactive-coffeeshop-demo.apps.naxx-stage2.dev.nextcle.com/ui/artifacts`
+AD482 Taste of training Demo App
+
+![](https://user-images.githubusercontent.com/10568159/127878062-785a2eba-b9d1-406d-99aa-382640d446e0.jpg)
+
+This demo has branches per scene in the demo.
+Please checkout the relevant branches per scene below.
+
+## Scenes
+
+### Scene 1 - Start
+Exercise&Solution branch: **base**
+
+### Scene 2 - Messaging Implementation
+
+![Adsız Not Defteri-04](https://user-images.githubusercontent.com/10568159/127878303-0176ecb0-3fa5-4c38-8980-ebc497273915.jpg)
+
+* Exercise branch: **exercise/messaging**
+* Solution branch: **solution/messaging**
+
+### Scene 3 - Marshmallows on Messaging
+
+![](https://user-images.githubusercontent.com/10568159/127878139-c4f68b0c-7ef8-431b-b5b6-1e49a4ea2d64.jpg)
+
+* Exercise branch: **exercise/messaging-marshmallows**
+* Solution branch: **solution/messaging-marshmallows**
+
+### Scene 4 - Marshmallows on Messaging with Structure
+
+![Kaffe Shop Illustrations-22](https://user-images.githubusercontent.com/10568159/127878600-df0dba3d-db1d-4b87-bc7c-91b7872ae973.jpg)
+
+* Exercise branch: **exercise/marshmallows**
+* Solution branch: **solution/marshmallows**
+
+## Resources
+
+* https://github.com/cescoffier/reactive-coffeeshop-demo
+* https://www.youtube.com/watch?v=F-a4vNoK05M
+
+**Presentation:** https://speakerdeck.com/mabulgu/a-day-in-a-coffee-shop-building-event-driven-systems-with-structure
+
